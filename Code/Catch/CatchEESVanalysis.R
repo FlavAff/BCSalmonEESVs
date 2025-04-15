@@ -1,4 +1,4 @@
-setwd("~/Documents/McGill/PhD/Chapter 2/Code/")
+setwd("~/Documents/Code/")
 rm(list = ls(all=TRUE)); #Remove all the objects in the memory
 
 library(cmdstanr)
