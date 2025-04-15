@@ -1,0 +1,1 @@
+This repository contains the necessary code for data processing and analysis of the essential ecosystem service variables (EESVs) and drivers at the pronvicial scale for the provisioning service provided by wild Pacific salmon fisheries.
