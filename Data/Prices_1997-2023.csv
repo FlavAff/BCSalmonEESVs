@@ -1,0 +1,238 @@
+Year,Species.Group,Source,Species,Harvest,Landed Value,Wholesale Value,Price per kilo wholesale,Price per kilo landed
+2023,Salmon,Farmed,Atlantic,47.562,463.819749,553.530887,11.63809106,9.751897502
+2023,Salmon,Farmed,Pacific,2.503,40.49078,42.735627,17.07376229,16.17689972
+2023,Salmon,Farmed,Farmed,50.065,504.310529,596.266514,11.90984748,10.07311553
+2023,Salmon,Wild commercial,Chinook,1.487,11.027132,21.53264655,14.4805962,7.415690652
+2023,Salmon,Wild commercial,Chum,0.485,1.247683,7.960072,16.41251959,2.572542268
+2023,Salmon,Wild commercial,Coho,0.518,2.663207,26.038665,50.26769305,5.141326255
+2023,Salmon,Wild commercial,Pink,3.563,2.029559,18.17650085,5.101459683,0.569620825
+2023,Salmon,Wild commercial,Sockeye,1.213,6.418695,155.119708,127.8810453,5.291586974
+2022,Salmon,Farmed,Atlantic,84.258,837.628766,973.1649054,11.54982204,9.941237224
+2022,Salmon,Farmed,Pacific,2.283,33.272532,50.72249313,22.21747399,14.57403942
+2022,Salmon,Farmed,Farmed,86.541,870.901298,1023.887399,11.83124067,10.06345314
+2022,Salmon,Wild commercial,Chinook,1.366,10.63775,20.21200763,14.79649168,7.787518302
+2022,Salmon,Wild commercial,Chum,0.942,4.289844,12.21932873,12.97168655,4.553974522
+2022,Salmon,Wild commercial,Coho,0.498,2.912044,20.2631667,40.68908976,5.847477912
+2022,Salmon,Wild commercial,Pink,1.81,1.529926,15.8804673,8.77373884,0.845262983
+2022,Salmon,Wild commercial,Sockeye,3.618,20.88389,207.2357623,57.27909406,5.772219458
+2021,Salmon,Farmed,Atlantic,81.12,663.91,730.97,9.011,8.184294872
+2021,Salmon,Farmed,Pacific,3.05,39.01,46.01,15.0852,12.79016393
+2021,Salmon,Farmed,Farmed,84.17,702.92,776.98,9.2311,8.351194012
+2021,Salmon,Wild commercial,Chinook,1.57,13.82,25.89,16.4904,8.802547771
+2021,Salmon,Wild commercial,Chum,0.32,0.92,9.92,31,2.875
+2021,Salmon,Wild commercial,Coho,0.34,1.69,19.85,58.3824,4.970588235
+2021,Salmon,Wild commercial,Pink,1.49,1.05,7.17,4.8121,0.704697987
+2021,Salmon,Wild commercial,Sockeye,0.5,2.43,123.02,246.04,4.86
+2020,Salmon,Farmed,Farmed,91.67,634.72,755.35,8.2399,6.923966401
+2020,Salmon,Farmed,Atlantic,89.23,605.02,710.52,7.9628,6.780455004
+2020,Salmon,Farmed,Pacific,2.44,29.7,44.83,18.373,12.17213115
+2020,Salmon,Wild commercial,Chinook,1.33,9.92,16.49,12.3985,7.458646617
+2020,Salmon,Wild commercial,Chum,1.51,4.48,13.45,8.9073,2.966887417
+2020,Salmon,Wild commercial,Coho,0.39,1.89,23.8,61.0256,4.846153846
+2020,Salmon,Wild commercial,Pink,4.97,4.86,12.24,2.4628,0.977867203
+2020,Salmon,Wild commercial,Sockeye,0.29,1.02,126.6,436.5517,3.517241379
+2019,Salmon,Farmed,Farmed,88.88,667.61,750,8.4383,7.511363636
+2019,Salmon,Farmed,Atlantic,86.49,635.28,706.98,8.1741,7.345126604
+2019,Salmon,Farmed,Pacific,2.39,32.33,43.02,18,13.52719665
+2019,Salmon,Wild commercial,Chinook,1.35,7.88,16.2,12,5.837037037
+2019,Salmon,Wild commercial,Chum,1.19,2.84,15.11,12.6975,2.386554622
+2019,Salmon,Wild commercial,Coho,0.63,3.96,24.28,38.5397,6.285714286
+2019,Salmon,Wild commercial,Pink,1.45,0.78,7.41,5.1103,0.537931034
+2019,Salmon,Wild commercial,Sockeye,0.18,0.95,87.35,485.2778,5.277777778
+2018,Salmon,Farmed,Farmed,87.01,778.66,882.01,10.1369,8.949086312
+2018,Salmon,Farmed,Atlantic,84.45,743.31,836.18,9.9015,8.801776199
+2018,Salmon,Farmed,Pacific,2.56,35.35,45.83,17.9023,13.80859375
+2018,Salmon,Wild commercial,Chinook,1.15,10.88,17.75,15.4348,9.460869565
+2018,Salmon,Wild commercial,Chum,4.15,13.41,31.28,7.5373,3.231325301
+2018,Salmon,Wild commercial,Coho,0.74,3.83,27.27,36.8514,5.175675676
+2018,Salmon,Wild commercial,Pink,0.62,0.58,5.34,8.6129,0.935483871
+2018,Salmon,Wild commercial,Sockeye,11.35,63.31,176.27,15.5304,5.577973568
+2017,Salmon,Farmed,Farmed,85.63,728.59,842.15,9.8348,8.50858344
+2017,Salmon,Farmed,Atlantic,83.05,694.94,797.89,9.6073,8.367730283
+2017,Salmon,Farmed,Pacific,2.58,33.65,44.26,17.155,13.04263566
+2017,Salmon,Wild commercial,Chinook,1.64,16.58,26.58,16.2073,10.1097561
+2017,Salmon,Wild commercial,Chum,7.4,22.61,44.52,6.0162,3.055405405
+2017,Salmon,Wild commercial,Coho,1.26,6.45,24.21,19.2143,5.119047619
+2017,Salmon,Wild commercial,Pink,3.69,3.45,13.01,3.5257,0.93495935
+2017,Salmon,Wild commercial,Sockeye,0.46,2.25,92.07,200.1522,4.891304348
+2016,Salmon,Farmed,Farmed,92.8,743.3,797.4,8.5927,8.009698276
+2016,Salmon,Farmed,Atlantic,90.5,713.1,758.4,8.3801,7.879558011
+2016,Salmon,Farmed,Pacific,2.3,30.2,39,16.9565,13.13043478
+2016,Salmon,Wild commercial,Chinook,1.7,21.5,26.6,15.6471,12.64705882
+2016,Salmon,Wild commercial,Chum,15.9,30.2,54.4,3.4214,1.899371069
+2016,Salmon,Wild commercial,Coho,1,5.1,28.6,28.6,5.1
+2016,Salmon,Wild commercial,Pink,3.5,2.8,13.6,3.8857,0.8
+2016,Salmon,Wild commercial,Sockeye,2.6,18.3,85.7,32.9615,7.038461538
+2015,Salmon,Farmed,Farmed,93,473.5,531.4,5.714,5.091397849
+2015,Salmon,Farmed,Atlantic,89.8,441.6,485.9,5.4109,4.917594655
+2015,Salmon,Farmed,Pacific,3.2,31.9,45.5,14.2188,9.96875
+2015,Salmon,Wild commercial,Chinook,1.5,17,25,16.6667,11.33333333
+2015,Salmon,Wild commercial,Chum,11.4,18.9,30.3,2.6579,1.657894737
+2015,Salmon,Wild commercial,Coho,0.9,4.3,22.8,25.3333,4.777777778
+2015,Salmon,Wild commercial,Pink,2.6,1.6,11.9,4.5769,0.615384615
+2015,Salmon,Wild commercial,Sockeye,4.4,20.1,91.4,20.7727,4.568181818
+2014,Salmon,Farmed,Farmed,67.7,398.5,455.6,6.7297,5.886262925
+2014,Salmon,Farmed,Atlantic,64.1,364.5,409.3,6.3853,5.686427457
+2014,Salmon,Farmed,Pacific,3.6,34,46.3,12.8611,9.444444444
+2014,Salmon,Wild commercial,Chinook,2.4,18.7,25,10.4167,7.791666667
+2014,Salmon,Wild commercial,Chum,4.5,8.9,23.3,5.1778,1.977777778
+2014,Salmon,Wild commercial,Coho,0.9,3.3,23.1,25.6667,3.666666667
+2014,Salmon,Wild commercial,Pink,6.7,4.6,24.8,3.7015,0.686567164
+2014,Salmon,Wild commercial,Sockeye,28.1,102.4,209.2,7.4448,3.644128114
+2013,Salmon,Farmed,Farmed,62.4,416.3,461.8,7.4006,6.671474359
+2013,Salmon,Farmed,Atlantic,58.3,385.6,410.2,7.036,6.61406518
+2013,Salmon,Farmed,Pacific,4.1,30.7,51.6,12.5854,7.487804878
+2013,Salmon,Wild commercial,Chinook,1.1,8.7,12.3,11.1818,7.909090909
+2013,Salmon,Wild commercial,Chum,8.6,11.2,28.5,3.314,1.302325581
+2013,Salmon,Wild commercial,Coho,1.8,8.3,27.5,15.2778,4.611111111
+2013,Salmon,Wild commercial,Pink,19.5,13.7,39.2,2.0103,0.702564103
+2013,Salmon,Wild commercial,Sockeye,0.6,3.3,69.3,115.5,5.5
+2012,Salmon,Farmed,Farmed,80,409.1,474.6,5.9325,5.11375
+2012,Salmon,Farmed,Atlantic,75.1,385.1,442.9,5.8975,5.127829561
+2012,Salmon,Farmed,Pacific,4.9,24,31.7,6.4694,4.897959184
+2012,Salmon,Wild commercial,Chinook,1.2,9.2,19,15.8333,7.666666667
+2012,Salmon,Wild commercial,Chum,6.3,8.2,38.1,6.0476,1.301587302
+2012,Salmon,Wild commercial,Coho,0.9,3.7,23.5,26.1111,4.111111111
+2012,Salmon,Wild commercial,Pink,1.2,0.9,13.2,11,0.75
+2012,Salmon,Wild commercial,Sockeye,3.6,12.4,74.1,20.5833,3.444444444
+2011,Salmon,Farmed,Farmed,83.2,435.7,507,6.0938,5.236778846
+2011,Salmon,Farmed,Atlantic,79.4,408.9,457.6,5.7632,5.149874055
+2011,Salmon,Farmed,Pacific,3.8,26.8,49.4,13,7.052631579
+2011,Salmon,Wild commercial,Chinook,1.5,11,21.4,14.2667,7.333333333
+2011,Salmon,Wild commercial,Chum,5.8,10.7,31.8,5.4828,1.844827586
+2011,Salmon,Wild commercial,Coho,1.2,4.9,24.5,20.4167,4.083333333
+2011,Salmon,Wild commercial,Pink,9.1,8.7,37.6,4.1319,0.956043956
+2011,Salmon,Wild commercial,Sockeye,3.1,12.7,105.7,34.0968,4.096774194
+2010,Salmon,Farmed,Farmed,78.7,499.7,550.4,6.9936,6.349428208
+2010,Salmon,Farmed,Atlantic,74.5,470.3,502.8,6.749,6.312751678
+2010,Salmon,Farmed,Pacific,4.2,29.4,47.6,11.3333,7
+2010,Salmon,Wild commercial,Chinook,1.2,9.6,18.5,15.4167,8
+2010,Salmon,Wild commercial,Chum,0.5,0.9,9.7,19.4,1.8
+2010,Salmon,Wild commercial,Coho,0.6,2.6,20.5,34.1667,4.333333333
+2010,Salmon,Wild commercial,Pink,1.3,0.7,16.8,12.9231,0.538461538
+2010,Salmon,Wild commercial,Sockeye,20,56.8,174.4,8.72,2.84
+2009,Salmon,Farmed,Farmed,76.3,394.2,493.5,6.4679,5.166448231
+2009,Salmon,Farmed,Atlantic,72.7,370.5,461,6.3411,5.096286107
+2009,Salmon,Farmed,Pacific,3.6,23.7,32.5,9.0278,6.583333333
+2009,Salmon,Wild commercial,Chinook,0.9,7.1,16.1,17.8889,7.888888889
+2009,Salmon,Wild commercial,Chum,2.7,4.3,21.3,7.8889,1.592592593
+2009,Salmon,Wild commercial,Coho,0.8,3,23.9,29.875,3.75
+2009,Salmon,Wild commercial,Pink,13.4,6.7,41.8,3.1194,0.5
+2009,Salmon,Wild commercial,Sockeye,0.7,2.6,39.2,56,3.714285714
+2008,Salmon,Farmed,Farmed,81.44,409.3,495.2,6.0806,5.025785855
+2008,Salmon,Farmed,Atlantic,77.24,381.8,455.5,5.8972,4.943034697
+2008,Salmon,Farmed,Pacific,4.2,27.5,39.7,9.4524,6.547619048
+2008,Salmon,Wild commercial,Chinook,1,9,18.4,18.4,9
+2008,Salmon,Wild commercial,Chum,1.7,3,18.7,11,1.764705882
+2008,Salmon,Wild commercial,Coho,0.4,1.9,21.3,53.25,4.75
+2008,Salmon,Wild commercial,Pink,0.4,0.2,13.3,33.25,0.5
+2008,Salmon,Wild commercial,Sockeye,1.9,7.7,65.5,34.4737,4.052631579
+2007,Salmon,Farmed,Farmed,78.88,384.1,469.3,5.9495,4.869421907
+2007,Salmon,Farmed,Atlantic,73.33,352.14,420.2,5.7303,4.802127369
+2007,Salmon,Farmed,Pacific,5.55,31.96,49.1,8.8468,5.758558559
+2007,Salmon,Wild commercial,Chinook,1.4,10.5,23.8,17,7.5
+2007,Salmon,Wild commercial,Chum,4.9,6.6,30.2,6.1633,1.346938776
+2007,Salmon,Wild commercial,Coho,0.8,2.6,19.9,24.875,3.25
+2007,Salmon,Wild commercial,Pink,11.2,5.2,43.3,3.8661,0.464285714
+2007,Salmon,Wild commercial,Sockeye,1.9,6.7,64.1,33.7368,3.526315789
+2006,Salmon,Farmed,Farmed,77.98,407.4,450.4,5.7758,5.224416517
+2006,Salmon,Farmed,Atlantic,70.98,370.13,398.6,5.6157,5.214567484
+2006,Salmon,Farmed,Pacific,7,37.27,51.8,7.4,5.324285714
+2006,Salmon,Wild commercial,Chinook,2,14.4,29.2,14.6,7.2
+2006,Salmon,Wild commercial,Chum,9.9,10.3,51.1,5.1616,1.04040404
+2006,Salmon,Wild commercial,Coho,0.6,2.4,21.6,36,4
+2006,Salmon,Wild commercial,Pink,1.4,0.5,8.5,6.0714,0.357142857
+2006,Salmon,Wild commercial,Sockeye,10.4,33.3,114,10.9615,3.201923077
+2005,Salmon,Farmed,Farmed,70.42,318.33,375.8,5.3366,4.520448736
+2005,Salmon,Farmed,Atlantic,53.79,252.23,293.1,5.449,4.689161554
+2005,Salmon,Farmed,Pacific,16.63,66.1,82.7,4.9729,3.974744438
+2005,Salmon,Wild commercial,Chinook,2.1,12.6,24.9,11.8571,6
+2005,Salmon,Wild commercial,Chum,10.6,10.1,54.1,5.1038,0.952830189
+2005,Salmon,Wild commercial,Coho,1.1,3.5,24,21.8182,3.181818182
+2005,Salmon,Wild commercial,Pink,12.6,4.2,46.9,3.7222,0.333333333
+2005,Salmon,Wild commercial,Sockeye,0.9,3.8,67.5,75,4.222222222
+2004,Salmon,Farmed,Farmed,61.83,225.18,287.2,4.645,3.641921397
+2004,Salmon,Farmed,Atlantic,46.07,174.53,,,3.788365531
+2004,Salmon,Farmed,Pacific,15.76,50.65,,,3.213832487
+2004,Salmon,Farmed,"Salmon, farmed",,,287.2,,
+2004,Salmon,Wild commercial,Chinook,2.4,14.8,26.9,11.2083,6.166666667
+2004,Salmon,Wild commercial,Chum,14.3,11.2,46.8,3.2727,0.783216783
+2004,Salmon,Wild commercial,Coho,1.2,3.9,19.3,16.0833,3.25
+2004,Salmon,Wild commercial,Pink,3.6,1.1,22.9,6.3611,0.305555556
+2004,Salmon,Wild commercial,Sockeye,4.4,22.2,100.8,22.9091,5.045454545
+2003,Salmon,Farmed,Farmed,72.68,255.8,302,4.1552,3.5195377
+2003,Salmon,Farmed,Atlantic,55.54,212.92,,,3.833633417
+2003,Salmon,Farmed,"Chinook salmon, farmed",15.72,36.83,,,2.342875318
+2003,Salmon,Farmed,"Coho salmon, farmed",1.42,6.05,,,4.26056338
+2003,Salmon,Farmed,"Salmon, farmed",,,302,,
+2003,Salmon,Wild commercial,Chinook,2.2,8.2,17.3,7.8636,3.727272727
+2003,Salmon,Wild commercial,Chum,13.7,9.1,45.6,3.3285,0.664233577
+2003,Salmon,Wild commercial,Coho,0.8,2.5,14.2,17.75,3.125
+2003,Salmon,Wild commercial,Pink,15.5,4.4,33.3,2.1484,0.283870968
+2003,Salmon,Wild commercial,Sockeye,6.4,24.6,75.2,11.75,3.84375
+2002,Salmon,Farmed,Farmed,84.25,288.95,338.9,4.0226,3.429673591
+2002,Salmon,Farmed,Atlantic,71.57,238.11,,,3.326952634
+2002,Salmon,Farmed,"Chinook salmon, farmed",10.41,41.86,,,4.021133525
+2002,Salmon,Farmed,"Coho salmon, farmed",2.26,8.94,,,3.955752212
+2002,Salmon,Farmed,Other Pacific,0.01,0.04,,,4
+2002,Salmon,Farmed,"Salmon, farmed",,,338.9,,
+2002,Salmon,Wild commercial,Chinook,1.7,7.1,11.8,6.9412,4.176470588
+2002,Salmon,Wild commercial,Chum,12.4,6,40.4,3.2581,0.483870968
+2002,Salmon,Wild commercial,Coho,0.5,1.1,8.1,16.2,2.2
+2002,Salmon,Wild commercial,Pink,8.6,2.8,32.1,3.7326,0.325581395
+2002,Salmon,Wild commercial,Sockeye,10.1,40.3,103.5,10.2475,3.99009901
+2001,Salmon,Farmed,Farmed,68.03,270.88,323,4.7479,3.981772747
+2001,Salmon,Farmed,Atlantic,58.03,216.65,,,3.733413752
+2001,Salmon,Farmed,"Chinook salmon, farmed",7.5,45.04,,,6.005333333
+2001,Salmon,Farmed,"Coho salmon, farmed",2.47,9.08,,,3.67611336
+2001,Salmon,Farmed,Other Pacific,0.03,0.11,,,3.666666667
+2001,Salmon,Farmed,"Salmon, farmed",,,323,,
+2001,Salmon,Wild commercial,Chinook,0.7,3.1,5.1,7.2857,4.428571429
+2001,Salmon,Wild commercial,Chum,5.8,5.7,26.6,4.5862,0.982758621
+2001,Salmon,Wild commercial,Coho,0.1,0.1,5,50,1
+2001,Salmon,Wild commercial,Pink,10.9,4.3,43.3,3.9725,0.394495413
+2001,Salmon,Wild commercial,Sockeye,7.2,23.9,77.7,10.7917,3.319444444
+2000,Salmon,Farmed,Farmed,49.35,281.69,326,6.6059,5.708004053
+2000,Salmon,Farmed,Atlantic,39.24,218.1,,,5.558103976
+2000,Salmon,Farmed,"Chinook salmon, farmed",7.99,55.42,,,6.936170213
+2000,Salmon,Farmed,"Coho salmon, farmed",2.09,8.07,,,3.861244019
+2000,Salmon,Farmed,Other Pacific,0.03,0.1,,,3.333333333
+2000,Salmon,Farmed,"Salmon, farmed",,,326,,
+2000,Salmon,Wild commercial,Chinook,0.5,2.8,5.3,10.6,5.6
+2000,Salmon,Wild commercial,Chum,2.8,3.4,34.5,12.3214,1.214285714
+2000,Salmon,Wild commercial,Coho,0.1,0.1,8.9,89,1
+2000,Salmon,Wild commercial,Pink,7.1,4.7,36.5,5.1408,0.661971831
+2000,Salmon,Wild commercial,Sockeye,8.5,39.5,113.1,13.3059,4.647058824
+1999,Salmon,Farmed,Farmed,49.64,290.6,333.9,6.7264,5.854149879
+1999,Salmon,Farmed,Atlantic,38.78,222.98,,,5.749871068
+1999,Salmon,Farmed,"Chinook salmon, farmed",8.82,55.56,,,6.299319728
+1999,Salmon,Farmed,"Coho salmon, farmed",2.02,12,,,5.940594059
+1999,Salmon,Farmed,Other Pacific,0.02,0.06,,,3
+1999,Salmon,Farmed,"Salmon, farmed",,,333.9,,
+1999,Salmon,Wild commercial,Chinook,0.8,4.1,6.6,8.25,5.125
+1999,Salmon,Wild commercial,Chum,5,4.1,41.2,8.24,0.82
+1999,Salmon,Wild commercial,Coho,0.1,0.1,5.8,58,1
+1999,Salmon,Wild commercial,Pink,9.5,5.7,53.2,5.6,0.6
+1999,Salmon,Wild commercial,Sockeye,1.7,12.4,63.1,37.1176,7.294117647
+1998,Salmon,Farmed,Farmed,42.25,228.97,264.1,6.2509,5.419408284
+1998,Salmon,Farmed,Atlantic,33.06,179.57,,,5.431639443
+1998,Salmon,Farmed,"Chinook salmon, farmed",6.57,39.51,,,6.01369863
+1998,Salmon,Farmed,"Coho salmon, farmed",2.3,8.66,,,3.765217391
+1998,Salmon,Farmed,Other Pacific,0.32,1.23,,,3.84375
+1998,Salmon,Farmed,"Salmon, farmed",,,264.1,,
+1998,Salmon,Wild commercial,Chinook,1.4,5.5,9.2,6.5714,3.928571429
+1998,Salmon,Wild commercial,Chum,19.9,12.8,57.2,2.8744,0.64321608
+1998,Salmon,Wild commercial,Coho,0.1,0.1,6.5,65,1
+1998,Salmon,Wild commercial,Pink,3.9,2.8,58.7,15.0513,0.717948718
+1998,Salmon,Wild commercial,Sockeye,5.1,32.9,76,14.902,6.450980392
+1997,Salmon,Farmed,Farmed,36.44,176.19,229.3,6.2925,4.83507135
+1997,Salmon,Farmed,Atlantic,30.71,144.16,,,4.694236405
+1997,Salmon,Farmed,"Chinook salmon, farmed",4.3,25.19,,,5.858139535
+1997,Salmon,Farmed,"Coho salmon, farmed",1.36,6.61,,,4.860294118
+1997,Salmon,Farmed,Other Pacific,0.07,0.23,,,3.285714286
+1997,Salmon,Farmed,"Salmon, farmed",,,229.3,,
+1997,Salmon,Wild commercial,Chinook,1.7,5.8,7.7,4.5294,3.411764706
+1997,Salmon,Wild commercial,Chum,8.7,6.5,36.1,4.1494,0.747126437
+1997,Salmon,Wild commercial,Coho,0.8,1.8,7.2,9,2.25
+1997,Salmon,Wild commercial,Pink,12.2,6.6,45,3.6885,0.540983607
+1997,Salmon,Wild commercial,Sockeye,25.3,89,209.6,8.2846,3.517786561
