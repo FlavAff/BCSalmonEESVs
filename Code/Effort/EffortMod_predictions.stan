@@ -1,13 +1,3 @@
-//
-// This Stan program defines a simple model, with a
-// vector of values 'y' modeled as normally distributed
-// with mean 'mu' and standard deviation 'sigma'.
-//
-// Learn more about model development with Stan at:
-//
-//    http://mc-stan.org/users/interfaces/rstan.html
-//    https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started
-//
 
 // The input data is a vector 'y' of length 'N'.
 data {
@@ -18,12 +8,25 @@ data {
   array[N_tot] int<lower=1,upper=N_gear> gear;     // gear data for all obs
   array[N_tot] int<lower=1,upper=N_area> area;     // area data for all obs
   
+  int<lower=0> N_combos; // Number of unique area-gear combos
+  array[N_tot] int<lower=1, upper=N_combos> combo_idx;
+  
   int<lower=0> N_fmis; // missing fleet values
-  int<lower=0> N_emis; // missing license values
   int<lower=0> N_lmis; // missing license values
+  int<lower=0> N_emis; // missing license values
 
   vector[N_tot] new_fleet;
   vector[N_tot] new_license;
+// --- Means from the ORIGINAL dataset for centering ---
+  real license_mean;
+  real fleet_mean;
+}
+
+
+transformed data {
+  // Center the new predictor data using the means from the original data
+  vector[N_tot] new_license_c = new_license - license_mean;
+  vector[N_tot] new_fleet_c = new_fleet - fleet_mean;
 }
 
 // The parameters accepted by the model. Our model
@@ -31,8 +34,8 @@ data {
 parameters {
   vector[N_area] beta0_F;
   vector[N_area] beta1_F;
-  matrix[N_area,N_gear] beta0_E;
-  matrix[N_area,N_gear] beta1_E;
+  vector[N_combos] beta0_E;     
+  vector[N_combos] beta1_E;
   real<lower=0> sigma_fleet;
   vector<lower=0>[N_gear] sigma_effort;
   
@@ -52,16 +55,19 @@ parameters {
   vector<lower=0>[N_emis] effort_imputed;
 }
 
-// Generate some predictions
+model {
+  
+}
+
 generated quantities {
   vector[N_tot] fleet_pred;
   vector[N_tot] effort_pred;
   
   vector[N_tot] mu_fleet;
-  mu_fleet = beta0_F[area] + beta1_F[area] .* new_license;
+  mu_fleet = beta0_F[area] + beta1_F[area] .* new_license_c;
   vector[N_tot] mu_effort;
   for (n in 1:N_tot) {
-    mu_effort[n] = beta0_E[area[n], gear[n]] + beta1_E[area[n], gear[n]] .* new_fleet[n];
+    mu_effort[n] = beta0_E[combo_idx[n]] + beta1_E[combo_idx[n]] .* new_fleet_c[n];
   }
 
   for (i in 1:N_tot) {
@@ -69,4 +75,3 @@ generated quantities {
     effort_pred[i] = normal_rng(mu_effort[i], sigma_effort[gear[i]]);
   }
 }
-
