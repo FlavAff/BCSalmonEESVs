@@ -15,7 +15,7 @@ dat$fleet <- dat$fleet/100
 dat$licenses <- dat$licenses/100
 
 #We are running two models here (effort & fleet)
-AC_mod <- cmdstan_model(stan_file = "Effort/ACLmodBest2.stan", pedantic=T) #ACLmod with licenses given a spread (.90/.65)
+AC_mod <- cmdstan_model(stan_file = "Effort/EffortMod.stan", pedantic=T) #ACLmod with licenses given a spread (.90/.65)
 datalist <- list(N_tot=nrow(dat),
             N_fobs=sum(!is.na(dat$fleet)),
             N_lobs=sum(!is.na(dat$licenses)),
@@ -34,10 +34,6 @@ datalist <- list(N_tot=nrow(dat),
             fleet_obs=dat$fleet[!is.na(dat$fleet)],
             license_obs=dat$licenses[!is.na(dat$licenses)],
             effort_obs=dat$effort[!is.na(dat$effort)],
-            
-            log_fleet_obs=log(dat$fleet[!is.na(dat$fleet)]),
-            log_license_obs=log(dat$licenses[!is.na(dat$licenses)]),
-            log_effort_obs=log(dat$effort[!is.na(dat$effort)]),
             
             N_gear=length(unique(dat$gear)),
             gear = dat$gear.n,
@@ -165,7 +161,7 @@ write_csv(AC$summary(), "../Results/Effort/ModelParams.csv")
 
 ##############################################################
 #Model predictions
-Nsamp_pred <- cmdstan_model(stan_file = "Effort/ACLmodBest2_predictions.stan", pedantic=T)
+Nsamp_pred <- cmdstan_model(stan_file = "Effort/EffortMod_predictions.stan", pedantic=T)
 reps <- 30
 newdata <- expand_grid(area=c("A","B","C","D","E","F","G","H"),
                        fleet= seq(from=0,to=10,length.out=reps)
@@ -195,7 +191,9 @@ data <-  list(new_fleet = newdata$fleet,
               area = newdata$area.n,
               N_fmis = sum(is.na(newdata$fleet)),
               N_emis = sum(is.na(newdata$fleet)),
-              N_lmis = sum(is.na(newdata$fleet))
+              N_lmis = sum(is.na(newdata$fleet)),
+              license_mean = mean(log(dat$licenses[!is.na(dat$licenses)])),
+              fleet_mean = mean(log(dat$fleet[!is.na(dat$fleet)]))
 )
 ACPreds <- Nsamp_pred$generate_quantities(data, fitted_params = AC)
 
@@ -204,13 +202,13 @@ ACPreds |>
   gather_rvars(effort_pred[i]) |> 
   #gather_rvars(mu_effort[i]) |> 
   bind_cols(newdata) |> 
-  ggplot(aes(x = (fleet), dist = .value)) + 
+  ggplot(aes(x = (fleet - mean(fleet)), dist = .value)) + 
   stat_lineribbon() +
   #geom_point(data = dat, aes(x=fleet, y=effort), colour = "black", alpha = 0.5, inherit.aes = FALSE) +
   facet_wrap(area~gear, scales = "free") + 
   scale_fill_brewer(palette = "Oranges", direction = -1) + 
   theme(legend.position = "none") + 
-  labs(x = "Fleet size", y = "Predicted effort (boat days)")
+  labs(x = "Average fleet size", y = "Predicted effort (boat days)")
 dev.off()
 
 
@@ -220,18 +218,18 @@ ACPreds |>
   gather_rvars(fleet_pred[i]) |> 
   #gather_rvars(mu_fleet[i]) |> 
   bind_cols(newdata) |> 
-  ggplot(aes(x = (licenses), dist = .value)) + 
+  ggplot(aes(x = (licenses - mean(licenses)), dist = .value)) + 
   stat_lineribbon() +
   #geom_point(data = dat, aes(x=licenses, y=fleet), colour = "black", alpha = 0.5, inherit.aes = FALSE) +
   facet_wrap(.~area, scales = "free") + 
   scale_fill_brewer(palette = "Oranges", direction = -1) + 
   theme(legend.position = "none") + 
-  labs(x = "Licenses", y = "Predicted fleet size")
+  labs(x = "Average licenses", y = "Predicted fleet size")
 dev.off()
 
 
 #Plot time series with missing data
-Nsamp_pred <- cmdstan_model(stan_file = "Effort/ACLmodBest3_predictions.stan", pedantic=T)
+Nsamp_pred <- cmdstan_model(stan_file = "Effort/EffortMod_preds.stan", pedantic=T)
 data <-  list(N_tot = nrow(dat),
               N_gear = length(unique(dat$gear)),
               gear = dat$gear.n,
@@ -239,22 +237,26 @@ data <-  list(N_tot = nrow(dat),
               area = dat$area.n,
               
               N_emis = sum(is.na(dat$effort)),
+              ii_emis = which(is.na(dat$effort)),
               
               N_lmis = sum(is.na(dat$licenses)),
-              N_obs_L = sum(!is.na(dat$licenses)),
-              ii_obs_L = which(!is.na(dat$licenses)),
-              ii_mis_L = which(is.na(dat$licenses)),
+              N_lobs = sum(!is.na(dat$licenses)),
+              ii_lobs = which(!is.na(dat$licenses)),
+              ii_lmis = which(is.na(dat$licenses)),
               L_new_obs = (dat$licenses[!is.na(dat$licenses)]),
               
               N_fmis = sum(is.na(dat$fleet)),
-              N_obs_F = sum(!is.na(dat$fleet)),
-              ii_obs_F = which(!is.na(dat$fleet)),
-              ii_mis_F = which(is.na(dat$fleet)),
-              F_new_obs = (dat$fleet[!is.na(dat$fleet)]))
+              N_fobs = sum(!is.na(dat$fleet)),
+              ii_fobs = which(!is.na(dat$fleet)),
+              ii_fmis = which(is.na(dat$fleet)),
+              F_new_obs = (dat$fleet[!is.na(dat$fleet)]),
+              
+              license_mean = mean((dat$licenses[!is.na(dat$licenses)])),
+              fleet_mean = mean((dat$fleet[!is.na(dat$fleet)])))
 ACPreds <- Nsamp_pred$generate_quantities(data, fitted_params = AC)
 
 
-png(file = "../Results/Effort/EffortYearPoints.png", width = 3400, height = 1800, res = 300)
+png(file = "../Results/Effort/EffortYearPoints.png", width = 3400, height = 3000, res = 300)
 ACPreds |> 
   gather_rvars(effort_pred[i]) |> 
   #gather_rvars(mu_effort[i]) |> 
@@ -262,12 +264,12 @@ ACPreds |>
   ggplot(aes(x = (year), dist = .value)) + 
   stat_lineribbon() +
   geom_point(data = dat, aes(x=year, y=effort), colour = "blue", alpha = 0.7, inherit.aes = FALSE, size = 2) +
-  facet_wrap(~ interaction(area, gear, sep = " - "), scales = "free") + 
+  facet_wrap(~ interaction(area, gear, sep = " - "), scales = "free", ncol = 2) + 
   scale_fill_brewer(palette = "Oranges", direction = -1, name = "Credible\ninterval") + 
   theme_minimal() + 
   labs(x = "Year", y = "Predicted effort (boat days)") +
   theme(
-    legend.position = c(0.85, 0.05),  # Place legend inside the plot at bottom right
+    legend.position = "none",  # Place legend inside the plot at bottom right
     legend.justification = c(.5, .3),  # Anchor legend to the bottom right
     text = element_text(size = 20),  # Increase font size for all text
     strip.text = element_text(face = "bold", size = 16)  # Bold and increase facet title size
@@ -282,7 +284,7 @@ ACPreds |>
   ggplot(aes(x = (year), dist = .value)) + 
   stat_lineribbon() +
   geom_point(data = dat, aes(x=year, y=fleet), colour = "blue", alpha = 0.5, inherit.aes = FALSE, size = 2) +
-  facet_wrap(~ interaction(area, gear, sep = " - "), scales = "free") + 
+  facet_wrap(~ interaction(area, gear, sep = " - "), scales = "free", ncol = 3) + 
   scale_fill_brewer(palette = "Oranges", direction = -1, name = "Credible\ninterval") + 
   theme_minimal() + xlim(2005,2023) +
   labs(x = "Year", y = "Predicted fleet size") +
