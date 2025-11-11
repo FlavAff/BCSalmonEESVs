@@ -21,7 +21,6 @@ data {
   array [N_miss_Pf] int<lower=1, upper=N> ii_mis_Pf; // Position of the missing values in the column
   vector[N_obs_Pf] Pf_obs;            // Observed values
   
-  vector[N] D;
   vector[N] Q;
   array[N] int<lower=1, upper=5> spp;  // array with species data
   int<lower=0> spp_n;     // number of species
@@ -29,10 +28,14 @@ data {
 
 // We will fit the model in log space so we log the data that is not missing
 transformed data{
-  vector[N] log_D;
-  log_D = log(D);
   vector[N] log_Q;
   log_Q = log(Q);
+  
+  // Calculate means of log predictors
+  real mean_log_Q = mean(log_Q);
+  
+  // Create centered log predictors
+  vector[N] log_Q_c = log_Q - mean_log_Q;
 }
 
 // The parameters accepted by the model.
@@ -40,7 +43,6 @@ parameters {
   vector[spp_n] B0; // intercept
   vector[spp_n] B1; // coefficient on harvest
   vector[spp_n] B2; // coefficient on farmed salmon price
-  vector[spp_n] B3; // coefficient on disposable income
   real<lower=0> sigma; // variance in observations
 
   //mean variance of parameters (hierarchical effect) - hyperparameters
@@ -48,8 +50,6 @@ parameters {
   real<lower=0> sigma_spp1;
   real mu_spp2;
   real<lower=0> sigma_spp2;
-  real mu_spp3;
-  real<lower=0> sigma_spp3;
   
   //missing data parameters
   vector<lower=0>[N_miss_P] P_imputed;
@@ -69,6 +69,9 @@ transformed parameters {
   Pf[ii_obs_Pf] = Pf_obs;        
   Pf[ii_mis_Pf] = Pf_imputed;    
   log_Pf = log(Pf);
+  
+  real mean_log_Pf = mean(log_Pf);
+  vector[N] log_Pf_c = log_Pf - mean_log_Pf;
 }
 
 // The model to be estimated. We model the output
@@ -83,7 +86,6 @@ model {
   B0 ~ normal(0,1);
   B1 ~ normal(mu_spp1,sigma_spp1);
   B2 ~ normal(mu_spp2,sigma_spp2);
-  B3 ~ normal(mu_spp3,sigma_spp3);
   sigma ~ exponential(1);
   
   // Hyper priors
@@ -91,12 +93,12 @@ model {
   sigma_spp1 ~ exponential(.5);
   mu_spp2 ~ normal(0,1);
   sigma_spp2 ~ exponential(.5);
-  mu_spp3 ~ normal(0,1);
-  sigma_spp3 ~ exponential(.5);
   
-  // Mean term
-  vector[N] mu;      // log mean
-  mu = B0[spp] + B1[spp] .* log_Q + B2[spp] .* log_Pf + B3[spp] .* log_D;    // Linear model  
+  // Mean term now uses the centered variables (log_Q_c, log_D_c, log_Pf_c)
+  vector[N] mu;       // log mean
+  mu = B0[spp] 
+       + B1[spp] .* log_Q_c 
+       + B2[spp] .* log_Pf_c; // Centered interaction 1
 
   //Log likelihood without autoregression
   log_P ~ normal(mu, sigma);
@@ -104,10 +106,15 @@ model {
 
 //Generate the average
 generated quantities {
-     vector[N] real_mu;      // log mean
-     vector[N] preds;
-     real_mu = exp(B0[spp] + B1[spp] .* log_Q + B2[spp] .* log_Pf + B3[spp] .* log_D);    // Linear model 
-     for (i in 1:N) {
-     preds[i] = (normal_rng(log(real_mu[i]), sigma));
+  vector[N] real_mu;       // log mean
+  vector[N] preds;
+  
+  // The expected value (real_mu) calculation must use the centered variables
+  real_mu = exp(B0[spp] 
+                + B1[spp] .* log_Q_c 
+                + B2[spp] .* log_Pf_c);  
+
+  for (i in 1:N) {
+    preds[i] = (normal_rng(log(real_mu[i]), sigma));
   }
  }
