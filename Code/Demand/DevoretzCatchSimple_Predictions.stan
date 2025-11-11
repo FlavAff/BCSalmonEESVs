@@ -10,7 +10,6 @@ data {
   int<lower=0> N;
   vector[N] newQ;
   vector[N] newPf;
-  vector[N] newD;
   array[N] int<lower=1, upper=5> spp;  // array with species data
   int<lower=0> spp_n;     // number of species
  
@@ -22,11 +21,18 @@ data {
 transformed data{
   vector[N] log_newQ;
   vector[N] log_newPf;
-  vector[N] log_newD;
 
   log_newQ = log(newQ);
   log_newPf = log(newPf);
-  log_newD = log(newD);
+  
+  // *** CENTERING CALCULATIONS ***
+  // Calculate means of log predictors
+  real mean_log_Q = mean(log_newQ);
+  real mean_log_Pf = mean(log_newPf);
+  
+  // Create centered log predictors
+  vector[N] log_Q_c = log_newQ - mean_log_Q;
+  vector[N] log_Pf_c = log_newPf - mean_log_Pf;
 }
 
 // The parameters accepted by the model.
@@ -34,7 +40,6 @@ parameters {
   vector[spp_n] B0; // intercept
   vector[spp_n] B1; // coefficient on harvest
   vector[spp_n] B2; // coefficient on farmed salmon price
-  vector[spp_n] B3; // coefficient on disposable income
   real<lower=0> sigma; // variance in observations
 
   //mean variance of parameters (hierarchical effect) - hyperparameters
@@ -42,9 +47,7 @@ parameters {
   real<lower=0> sigma_spp1;
   real mu_spp2;
   real<lower=0> sigma_spp2;
-  real mu_spp3;
-  real<lower=0> sigma_spp3;
-  
+
   //missing data parameters
   vector<lower=0>[N_miss_P] P_imputed;
   vector<lower=0>[N_miss_Pf] Pf_imputed;
@@ -57,7 +60,9 @@ generated quantities {
   vector[N] real_preds;
   vector[N] mu;      // logged mean
   vector[N] real_mu;      // mean
-  mu = B0[spp] + B1[spp] .* log_newQ + B2[spp] .* log_newPf + B3[spp] .* log_newD;    // Linear model mean logged
+  mu = B0[spp] 
+       + B1[spp] .* log_Q_c 
+       + B2[spp] .* log_Pf_c;    // Linear model mean logged
   real_mu = exp(mu);
   
   for (i in 1:N) {
